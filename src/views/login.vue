@@ -1,9 +1,11 @@
-<style scoped>
-
+<style lang="less" scoped>
+  .login {
+    .w(100%);
+  }
 </style>
 
 <template>
-  <div>login</div>
+  <div class="login">login</div>
 </template>
 
 <script setup>

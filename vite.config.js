@@ -3,7 +3,9 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 export default defineConfig({
+	// ~ 插件
 	plugins: [vue()],
+	// ~ 自定义路径
 	resolve: {
 		alias: {
 			'@': resolve(__dirname, 'src'), // ~ 指向src文件夹，
@@ -14,10 +16,23 @@ export default defineConfig({
 			'@views': resolve(__dirname, 'src/views'), // ~ 指向样式资源
 		},
 	},
+	// ~ 基础路径
 	base: './',
+	// ~ 配置本地服务器
 	server: {
 		port: 4000,
 		open: !0,
 		cors: !0,
+	},
+	// ~ 导入less全局变量
+	css: {
+		preprocessorOptions: {
+			less: {
+				modifyVars: {
+					hack: `true; @import (reference) "${ resolve('src/assets/style/mixin.less')}";`,
+				},
+				javascriptEnabled: !0
+			}
+		}
 	},
 })

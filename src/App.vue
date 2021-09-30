@@ -1,7 +1,7 @@
-<style>
+<style lang="less">
 #app {
-  margin: 0;
-  padding: 0;
+  .wh(100%, 100%);
+  .over(at);
 }
 </style>
 
