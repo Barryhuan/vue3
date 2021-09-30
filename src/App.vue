@@ -37,11 +37,9 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-import { SAVE_CURRENT_STATE } from '@common/utils/const'
 export default defineComponent({
   name: 'APP',
   setup() {
-    SAVE_CURRENT_STATE(this.$store)
   }
 })
 </script>
