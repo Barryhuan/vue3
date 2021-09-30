@@ -1,0 +1,720 @@
+@charset 'urf-8';
+.flex-hv() {
+  .dp(f);
+  .j-c(c);
+  .a-i(c);
+}
+
+.flex-h() {
+  .dp(f);
+  .j-c(c);
+}
+
+.flex-v() {
+  .dp(f);
+  .a-i(c);
+}
+
+.ab-hv() {
+  .ps(ab);
+  left: 50%;
+  top: 50%;
+  .translate(-50%, -50%);
+}
+
+.ab-h() {
+  .ps(ab);
+  left: 50%;
+  .tranf(translateX(-50%));
+}
+
+.ab-v() {
+  .ps(ab);
+  left: 50%;
+  .tranf(translateY(-50%));
+}
+
+.ellipsis() {
+  .over(h);
+  .txt-over();
+  .white-s(n);
+}
+
+.mutipleellipsis() {
+  .over(h);
+  .txt-over();
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+// Attribute
+
+@trans: transition;
+
+@tranf: transform;
+
+@animate: animation;
+
+// mixins
+
+.trans(...) {
+  @{trans}: @arguments;
+}
+
+.tranf(...) {
+  @{tranf}+_: @arguments;
+}
+
+.rotate(@s) {
+  @{tranf}+_: rotate(@s);
+}
+
+.rotate3(@s) {
+  @{tranf}: rotate3d(@s);
+}
+
+.translate(...) {
+  @{tranf}: translate(@arguments);
+}
+
+.translate3(...) {
+  @{tranf}: translate3d(@arguments);
+}
+
+.scale(...) {
+  @{tranf}: scale(@arguments);
+}
+
+.scale3(...) {
+  @{tranf}: scale3d(@arguments);
+}
+
+.animate(...) {
+  @{animate}: @arguments;
+}
+
+// Attribute
+
+@bg: background;
+
+@bg-c: background-color;
+@bg-s: background-size;
+
+@box: box-sizing;
+@box-att: {
+  b: border-box;
+  c: content-box;
+};
+@box-s: box-shadow;
+
+// mixins
+
+.bg(...) {
+  @{bg}: @arguments;
+}
+
+.bg-i (@url, @repeat: no-repeat) {
+  @{bg}+_: ~"url(@{url})" @repeat;
+}
+
+.bg-ip (@url, @repeat: no-repeat, @position: center center) {
+  .bg-i(@url, @repeat);
+  @{bg}+_: @position;
+}
+
+.bg-c(@c) {
+  @{bg-c}: @c;
+}
+
+.bg-s(...) {
+  @{bg-s}: @arguments;
+}
+
+.box(@c) when (@c = b) {
+  @{box}: @box-att[b];
+}
+
+.box(@c) when (@c = c) {
+  @{box}: @box-att[c];
+}
+
+.box-s(...) {
+  @{box-s}: @arguments;
+}
+
+// Attributes
+
+// box-content
+@w: width;
+@min-w: min-width;
+@max-w: max-width;
+@h: height;
+@min-h: min-height;
+@max-h: max-height;
+@mg: margin;
+@pd: padding;
+@bd: border;
+@bd-c: border-color;
+@bd-w: border-width;
+@bd-s: border-style;
+
+// border-radius
+@bdr: border-radius;
+
+// position-start
+@ps: position;
+@ps-att: {
+  st: static;
+  rt: relative;
+  ab: absolute;
+  fx: fixed;
+};
+
+@dp: display;
+@dp-att: {
+  n: none;
+  b: block;
+  f: flex;
+  g: grid;
+  ib: inline-block;
+};
+
+// z-index
+@z: z-index;
+
+// outline
+@ol: outline;
+
+// overflow
+@over: overflow;
+@over-att: {
+  v: visible;
+  at: auto;
+  h: hidden;
+  s: scroll;
+};
+
+// flex
+@f-d: flex-direction;
+
+@f-d-att: {
+  r: row;
+  rs: row-reverse;
+  c: column;
+  cs: column-reverse;
+};
+
+@f-w: flex-wrap;
+
+@f-w-att: {
+  n: no-wrap;
+  r: wrap;
+  rs: wrap-reverse;
+};
+
+@flex-attr: {
+  fs: flex-start;
+  fe: flex-end;
+  c: center;
+  sb: space-between;
+  se: space-evenly;
+  sa: space-around;
+  s: stretch;
+  base: baseline;
+  a: auto;
+};
+
+@f-f: flex-flow;
+@j-c: justify-content;
+@a-i: align-items;
+@a-c: align-content;
+@a-s: align-self;
+@flex: flex;
+@f-g: flex-grow;
+@f-b: flex-basis;
+@f-o: order;
+@f-s: flex-shrink;
+
+// mixin
+.w(@s:auto) {
+  @{w}: @s;
+}
+
+.min-w(@s:auto) {
+  @{min-w}: @s;
+}
+
+.max-w(@s:auto) {
+  @{max-w}: @s;
+}
+
+.h(@s:auto) {
+  @{h}: @s;
+}
+
+.min-h(@s:auto) {
+  @{min-h}: @s;
+}
+
+.max-h(@s:auto) {
+  @{max-h}: @s;
+}
+
+.wh(@w: auto, @h: auto) {
+  .w(@w);
+  .h(@h);
+}
+
+.mg(@s) {
+  @{mg}: @s;
+}
+
+.mg(@v, @s) when (@v = t) {
+  margin-top: @s;
+}
+
+.mg(@v, @s) when (@v = b) {
+  margin-bottom: @s;
+}
+
+.mg(@v, @s) when (@v = l) {
+  margin-left: @s;
+}
+
+.mg(@v, @s) when (@v = r) {
+  margin-right: @s;
+}
+
+.pd(@s) {
+  @{pd}: @s;
+}
+
+.pd(@v, @s) when (@v = t) {
+  padding-top: @s;
+}
+
+.pd(@v, @s) when (@v = b) {
+  padding-bottom: @s;
+}
+
+.pd(@v, @s) when (@v = l) {
+  padding-left: @s;
+}
+
+.pd(@v, @s) when (@v = r) {
+  padding-right: @s;
+}
+
+.bd(@s) {
+  @{bd}: @s;
+}
+
+.bd-w(...) {
+  @{bd-w}: @arguments;
+}
+
+.bd-s(...) {
+  @{bd-s}: @arguments;
+}
+
+.bd-c(@s) {
+  @{bd-c}: @s;
+}
+
+.bd(@v, @s) when (@v = t) {
+  border-top: @s;
+}
+
+.bd(@v, @s) when (@v = b) {
+  border-bottom: @s;
+}
+
+.bd(@v, @s) when (@v = l) {
+  border-left: @s;
+}
+
+.bd(@v, @s) when (@v = r) {
+  border-right: @s;
+}
+
+.bdr(...) {
+  @{bdr}: @arguments;
+}
+
+.z(@s) {
+  @{z}: @s;
+}
+
+.ol(@s) {
+  @{ol}: @s;
+}
+
+// display-start
+.dp(@s) when (@s = n) {
+  @{dp}: @dp-att[n];
+}
+
+.dp(@s) when (@s = b) {
+  @{dp}: @dp-att[b];
+}
+
+.dp(@s) when (@s = f) {
+  @{dp}: @dp-att[f];
+}
+
+.dp(@s) when (@s = g) {
+  @{dp}: @dp-att[g];
+}
+
+.dp(@s) when (@s = ib) {
+  @{dp}: @dp-att[ib];
+}
+// display-end
+
+// position-start
+.ps(@s) when (@s = st) {
+  @{ps}: @ps-att[st];
+}
+
+.ps(@s) when (@s = rt) {
+  @{ps}: @ps-att[rt];
+}
+
+.ps(@s) when (@s = ab) {
+  @{ps}: @ps-att[ab];
+}
+
+.ps(@s) when (@s = fx) {
+  @{ps}: @ps-att[fx];
+}
+// position-end
+
+// overflow-start
+.over(@s) when(@s = v) {
+  @{over}: @over-att[v];
+}
+
+.over(@s) when(@s = at) {
+  @{over}: @over-att[at];
+}
+
+.over(@s) when(@s = h) {
+  @{over}: @over-att[h];
+}
+
+.over(@s) when(@s = s) {
+  @{over}: @over-att[s];
+}
+// overflow-end
+
+// flex-hv-start
+.j-c(@s) when (@s = fs) {
+  @{j-c}: @flex-attr[fs];
+}
+
+.j-c(@s) when (@s = fe) {
+  @{j-c}: @flex-attr[fe];
+}
+
+.j-c(@s) when (@s = c) {
+  @{j-c}: @flex-attr[c];
+}
+
+.j-c(@s) when (@s = sb) {
+  @{j-c}: @flex-attr[sb];
+}
+
+.j-c(@s) when (@s = se) {
+  @{j-c}: @flex-attr[se];
+}
+
+.j-c(@s) when (@s = sa) {
+  @{j-c}: @flex-attr[sa];
+}
+
+.a-i(@s) when (@s = fs) {
+  @{a-i}: @flex-attr[fs];
+}
+
+.a-i(@s) when (@s = fe) {
+  @{a-i}: @flex-attr[fe];
+}
+
+.a-i(@s) when (@s = c) {
+  @{a-i}: @flex-attr[c];
+}
+
+.a-i(@s) when (@s = s) {
+  @{a-i}: @flex-attr[s];
+}
+
+.a-i(@s) when (@s = base) {
+  @{a-i}: @flex-attr[base];
+}
+
+.a-c(@s) when (@s = fs) {
+  @{a-c}: @flex-attr[fs];
+}
+
+.a-c(@s) when (@s = fe) {
+  @{a-c}: @flex-attr[fe];
+}
+
+.a-c(@s) when (@s = c) {
+  @{a-c}: @flex-attr[c];
+}
+
+.a-c(@s) when (@s = sb) {
+  @{a-c}: @flex-attr[sb];
+}
+
+.a-c(@s) when (@s = se) {
+  @{a-c}: @flex-attr[se];
+}
+
+.a-c(@s) when (@s = sa) {
+  @{a-c}: @flex-attr[sa];
+}
+
+.a-c(@s) when (@s = s) {
+  @{a-c}: @flex-attr[s];
+}
+
+.a-s(@s) when (@s = fs) {
+  @{a-s}: @flex-attr[fs];
+}
+
+.a-s(@s) when (@s = fe) {
+  @{a-s}: @flex-attr[fe];
+}
+
+.a-s(@s) when (@s = c) {
+  @{a-s}: @flex-attr[c];
+}
+
+.a-s(@s) when (@s = base) {
+  @{a-s}: @flex-attr[base];
+}
+
+.a-s(@s) when (@s = s) {
+  @{a-s}: @flex-attr[s];
+}
+
+.a-s(@s) when (@s = a) {
+  @{a-s}: @flex-attr[a];
+}
+// flex-hv-end
+
+.f-d(@s) when (@s = r) {
+  @{f-d}: @f-d-att[r];
+}
+
+.f-d(@s) when (@s = rs) {
+  @{f-d}: @f-d-att[rs];
+}
+
+.f-d(@s) when (@s = c) {
+  @{f-d}: @f-d-att[c];
+}
+
+.f-d(@s) when (@s = cs) {
+  @{f-d}: @f-d-att[cs];
+}
+
+.f-w(@s) when (@s = n) {
+  @{f-w}: @f-w-att[n];
+}
+
+.f-w(@s) when (@s = r) {
+  @{f-w}: @f-w-att[r];
+}
+
+.f-w(@s) when (@s = rs) {
+  @{f-w}: @f-w-att[rs];
+}
+
+.f-b(@s) {
+  @{f-b}: @s;
+}
+
+.f-s(@s) {
+  @{f-s}: @s;
+}
+
+.f-g(@s) {
+  @{f-g}: @s;
+}
+
+.f-f(...) {
+  @{f-f}: @arguments;
+}
+
+.flex(...) {
+  @{flex}: @arguments;
+}
+
+// Attribute
+
+@ft: font;
+
+@ft-s: font-size;
+
+@ft-w: font-weight;
+
+@ft-f: font-family;
+
+@ft-style: font-style;
+
+@ft-var: font-variant;
+
+@l-h: line-height;
+
+@c: color;
+
+@txt-i: text-indent;
+
+@txt-a: text-align;
+
+@txt-a-att: {
+  l: left;
+  c: center;
+  r: right;
+};
+
+@txt-d: text-decoration;
+
+@txt-d-att: {
+  n: none;
+  l: line-through;
+  u: underline;
+  o: overline;
+};
+
+@txt-t: text-transform;
+
+@txt-t-att: {
+  u: uppercase;
+  l: lowercase;
+  c: capitalize;
+  n: none;
+};
+
+@txt-over: text-overflow;
+
+@txt-s: text-shadow;
+
+@letter-s: letter-spacing;
+
+@word-s: word-spacing;
+
+@white-s: white-space;
+
+@white-s-att: {
+  n: nowrap;
+  p: pre;
+};
+
+// mixin
+
+// ----------- font ------------- //
+
+.ft-s(@s) {
+  @{ft-s}: @s;
+}
+
+.ft-f(...) {
+  @{ft-f}: @arguments;
+}
+
+.ft-w(@s) {
+  @{ft-w}: @s;
+}
+
+.ft-style(@s) {
+  @{ft-style}: @s;
+}
+
+.ft-var(@s) {
+  @{ft-var}: @s;
+}
+
+// ----------  text --------------- //
+
+.txt-i(@s) {
+  @{txt-i}: @s;
+}
+
+.txt-a(@s) when (@s = l) {
+  @{txt-a}: @txt-a-att[l];
+}
+
+.txt-a(@s) when (@s = c) {
+  @{txt-a}: @txt-a-att[c];
+}
+
+.txt-a(@s) when (@s = r) {
+  @{txt-a}: @txt-a-att[r];
+}
+
+.txt-d(@s) when (@s = n) {
+  @{txt-d}: @txt-d-att[n];
+}
+
+.txt-d(@s) when (@s = u) {
+  @{txt-d}: @txt-d-att[u];
+}
+
+.txt-d(@s) when (@s = o) {
+  @{txt-d}: @txt-d-att[o];
+}
+
+.txt-d(@s) when (@s = l) {
+  @{txt-d}: @txt-d-att[l];
+}
+
+.txt-t(@s) when(@s = u) {
+  @{txt-t}: @txt-t-att[u];
+}
+
+.txt-t(@s) when(@s = l) {
+  @{txt-t}: @txt-t-att[l];
+}
+
+.txt-t(@s) when(@s = c) {
+  @{txt-t}: @txt-t-att[c];
+}
+
+.txt-s(...) {
+  @{txt-s}: @arguments;
+}
+
+.txt-over() {
+  @{txt-over}: ellipsis;
+}
+
+// -----------  spacing  ------------ //
+
+.l-h(@s) {
+  @{l-h}: @s;
+}
+
+.letter-s (@s) {
+  @{letter-s}: @s;
+}
+
+.word-s (@s) {
+  @{word-s}: @s;
+}
+
+.white-s(@s) when (@s = n) {
+  @{white-s}: @white-s-att[n];
+}
+
+.white-s(@s) when (@s = p) {
+  @{white-s}: @white-s-att[p];
+}
+
+.c(@s) {
+  @{c}: @s;
+}
