@@ -26,7 +26,9 @@ export default defineConfig({
 	},
 	// ~ 导入less全局变量
 	css: {
+		// ~ 预处理配置
 		preprocessorOptions: {
+			// ~ less
 			less: {
 				modifyVars: {
 					hack: `true; @import (reference) "${ resolve('src/assets/style/mixin.less')}";`,
@@ -35,4 +37,24 @@ export default defineConfig({
 			}
 		}
 	},
+	// ~ 打包配置
+	build: {
+		assetsDir: 'static/img/', // ~ 静态资源路径
+		rollupOptions: {
+			output: {
+				chunkFileNames: 'static/js/[name]-[hash].js', // ~ 其他js文件
+				entryFileNames: 'static/js/[name]-[hash].js', // ~ 入口文件
+				assetFileNames: 'static/[ext]/[name]-[hash].[ext]', // ~ 其他样式和字体文件
+			}
+		},
+		brotliSize: !1, // ~ 取消计算打包速度
+		// ~ 简洁配置
+		terserOptions: {
+			// ~ 压缩配置
+			compress: {
+				drop_console: !0,
+				drop_debugger: !0
+			}
+		}
+	}
 })
