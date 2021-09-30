@@ -12,7 +12,15 @@
   "dependencies": {
     "vue": "^3.2.16",
     "vue-router": "^4.0.11",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "debounce": "^1.2.1",
+    "echarts": "^4.9.0",
+    "element-ui": "^2.15.5",
+    "jquery": "^1.11.0",
+    "jspdf-html2canvas": "^1.4.9",
+    "md5": "^2.3.0",
+    "query-string": "^7.0.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.2",

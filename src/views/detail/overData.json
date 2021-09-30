@@ -1,0 +1,83 @@
+[
+  {
+    "title" : "模型",
+    "type": "model",
+    "data": [
+      {
+        "prev" : "",
+        "middle": "0",
+        "after": "分"
+      }
+    ]
+  },
+  {
+    "title" : "区域面积",
+    "type": "area",
+    "data": [
+      {
+        "prev" : "",
+        "middle": "0",
+        "after": "km²"
+      }
+    ]
+  },
+  {
+    "title" : "居住指数",
+    "type": "live_index",
+    "data": [
+      {
+        "prev" : "",
+        "middle": "0",
+        "after": "人"
+      },
+      {
+        "prev" : "密度",
+        "middle": "0",
+        "after": "人/km²"
+      }
+    ]
+  },
+  {
+    "title" : "工作指数",
+    "type": "work_index",
+    "data": [
+      {
+        "prev" : "",
+        "middle": "0",
+        "after": "人"
+      },
+      {
+        "prev" : "密度",
+        "middle": "0",
+        "after": "人/km²"
+      }
+    ]
+  },
+  {
+    "title" : "居住/工作比例",
+    "type": "live_work_ratio",
+    "data": [
+      {
+        "prev" : "",
+        "middle": "0 / 0",
+        "after": ""
+      }
+    ]
+  },
+  {
+    "title" : "客流指数",
+    "type": "passenger_index",
+    "data": [
+      {
+        "prev" : "节假日",
+        "middle": "0",
+        "after": "人"
+      },
+      {
+        "prev" : "工作日",
+        "middle": "0",
+        "after": "人"
+      }
+    ]
+  }
+]
