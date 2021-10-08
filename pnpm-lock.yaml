@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@vitejs/plugin-vue': ^1.9.2
+  echarts: ^5.2.1
   element-plus: ^1.1.0-beta.19
   less: ^4.1.1
   less-loader: ^10.0.1
@@ -11,6 +12,7 @@ specifiers:
   vuex: ^4.0.2
 
 dependencies:
+  echarts: 5.2.1
   element-plus: 1.1.0-beta.19_vue@3.2.19
   vue: 3.2.19
   vue-router: 4.0.11_vue@3.2.19
@@ -185,6 +187,13 @@ packages:
       ms: 2.1.3
     dev: true
     optional: true
+
+  /echarts/5.2.1:
+    resolution: {integrity: sha512-OJ79b22eqRfbSV8vYmDKmA+XWfNbr0Uk/OafWcFNIGDWti2Uw9A6eVCiJLmqPa9Sk+EWL+t5v26aak0z3gxiZw==}
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.2.1
+    dev: false
 
   /element-plus/1.1.0-beta.19_vue@3.2.19:
     resolution: {integrity: sha512-eKJId8un12eoaL88lfLMBtDxRUJfrAQP3bav9p2QG2agOXu3cvYDGBtT773P0ZEm3/97t+itRbxYIYYLV4iNeQ==}
@@ -593,6 +602,10 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
+  /tslib/2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+    dev: false
+
   /vite/2.6.1_less@4.1.1:
     resolution: {integrity: sha512-rYd+iGMQ+AytWfYBDhIz2upeiseuqrAMwmApJDR40wu12C9MqzemX449nM3FN1Z/FFSV+fMTFz7eMenngVSogA==}
     engines: {node: '>=12.2.0'}
@@ -659,4 +672,10 @@ packages:
     dependencies:
       '@vue/devtools-api': 6.0.0-beta.18
       vue: 3.2.19
+    dev: false
+
+  /zrender/5.2.1:
+    resolution: {integrity: sha512-M3bPGZuyLTNBC6LiNKXJwSCtglMp8XUEqEBG+2MdICDI3d1s500Y4P0CzldQGsqpRVB7fkvf3BKQQRxsEaTlsw==}
+    dependencies:
+      tslib: 2.3.0
     dev: false
