@@ -4,7 +4,9 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 export default defineConfig({
 	// ~ 插件
-	plugins: [vue()],
+	plugins: [
+		vue()
+	],
 	// ~ 自定义路径
 	resolve: {
 		alias: {
@@ -13,8 +15,8 @@ export default defineConfig({
 			'@assets': resolve(__dirname, 'src/assets'), // ~ 指向静态资源文件
 			'@img': resolve(__dirname, 'src/assets/images'), // ~ 指向图片资源
 			'@style': resolve(__dirname, 'src/assets/style'), // ~ 指向样式资源
-			'@views': resolve(__dirname, 'src/views'), // ~ 指向样式资源
-		},
+			'@views': resolve(__dirname, 'src/views') // ~ 指向样式资源
+		}
 	},
 	// ~ 基础路径
 	base: './',
@@ -22,7 +24,7 @@ export default defineConfig({
 	server: {
 		port: 4000,
 		open: !0,
-		cors: !0,
+		cors: !0
 	},
 	// ~ 导入less全局变量
 	css: {
@@ -31,7 +33,7 @@ export default defineConfig({
 			// ~ less
 			less: {
 				modifyVars: {
-					hack: `true; @import (reference) "${ resolve('src/assets/style/mixin.less')}";`,
+					hack: `true; @import (reference) "${ resolve('src/assets/style/mixin.less')}";`
 				},
 				javascriptEnabled: !0
 			}
@@ -44,7 +46,7 @@ export default defineConfig({
 			output: {
 				chunkFileNames: 'static/js/[name]-[hash].js', // ~ 其他js文件
 				entryFileNames: 'static/js/[name]-[hash].js', // ~ 入口文件
-				assetFileNames: 'static/[ext]/[name]-[hash].[ext]', // ~ 其他样式和字体文件
+				assetFileNames: 'static/[ext]/[name]-[hash].[ext]' // ~ 其他样式和字体文件
 			}
 		},
 		brotliSize: !1, // ~ 取消计算打包速度
