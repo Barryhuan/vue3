@@ -1,8 +1,7 @@
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>
 
 <template>
+<div></div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>

@@ -59,7 +59,7 @@
   .bg-c(transparent);
 }
 ::-webkit-scrollbar-thumb {
-  .bg-c(rgba(0,0,0,.2));
+  .bg-c(rgba(0,0,0,0.2));
   .bdr(2px);
 }
 ::-webkit-scrollbar-track {
@@ -138,7 +138,7 @@
 }
 
 .bg-i (@url, @repeat: no-repeat) {
-  @{bg}+_: ~"url(@{url})" @repeat;
+  @{bg}+_: ~'url(@{url})' @repeat;
 }
 
 .bg-ip (@url, @repeat: no-repeat, @position: center center) {

@@ -1,11 +1,11 @@
-import { buildURL} from '@common/utils/url'
+import { buildURL } from '@common/utils/url'
 import { Message } from 'element-ui'
 function request(path, config) {
   // config = { method: "GET", ...config }
   let url = `/api/${path}`
 
   if (config.params) {
-    url = buildURL(url, config.params);
+    url = buildURL(url, config.params)
   }
 
   let formData = new FormData()
@@ -37,7 +37,7 @@ function request(path, config) {
         }, 1500)
       }
       if (res.code === -1) {
-        return Promise.reject({ code: res.code , msg: res.msg})
+        return Promise.reject({ code: res.code, msg: res.msg })
       }
     })
     .catch(err => err)
