@@ -1,6 +1,6 @@
 import { buildURL } from '@common/utils/url'
 import { Message } from 'element-ui'
-function request(path, config) {
+function request (path, config) {
   // config = { method: "GET", ...config }
   let url = `/api/${path}`
 
@@ -8,7 +8,7 @@ function request(path, config) {
     url = buildURL(url, config.params)
   }
 
-  let formData = new FormData()
+  const formData = new FormData()
 
   Object.keys(config.data).forEach(item => {
     formData.append(item, config.data[item])

@@ -31,7 +31,9 @@ export default defineConfig({
       // ~ less
       less: {
         modifyVars: {
-          hack: `true; @import (reference) "${resolve('src/assets/style/mixin.less')}";`
+          hack: `true; @import (reference) "${resolve(
+            'src/assets/style/mixin.less'
+          )}";`
         },
         javascriptEnabled: !0
       }
